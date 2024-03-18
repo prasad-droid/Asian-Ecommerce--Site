@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+    <link rel="stylesheet" href={% static 'style.css' %} /> 
+    <link rel="icon" href={% static 'src/logo.webp' %}  />
+    <script src={% static 'script.js' %}></script>
+</head>
+
+<div class="container_nav fixed-top">
+    <div class="navbar_con">
+      <ul>
+        <li>
+          <a href="/">
+            <img src="{% static 'src/logo.webp' %}" width="100px" />
+          </a>
+        </li>
+        <li>
+          <ul class="menu_side">
+            <li>
+              <a href="/">
+                <p>Home</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="menchoose">
+                <p>Men</p>
+              </a>
+            </li>
+            <li>
+              <a href="women">
+                <p>Women</p>
+              </a>
+            </li>
+            <li>
+              <a href="kid">
+                <p>Kids</p>
+              </a>
+            </li>
+            <li>
+              <a href="arrivals">
+                <p>New Arrivals</p>
+              </a>
+            </li>
+            <li>
+              <a href="order">
+                <p>My Orders</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <ul class="other">
+            <li>
+              <a href="">
+                <span id="name_login">Vivek</span>
+                <i class="fa-solid fa-circle-user"></i>
+              </a>
+            </li>
+
+            <li>
+              <div class="offcanvas offcanvas-top" id="demo">
+                <div class="offcanvas-body">
+                  <input type="text" placeholder="Search" class="search" />
+                  <button class="sea">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    id="searchclose"
+                    data-bs-dismiss="offcanvas"
+                  ></button>
+                </div>
+              </div>
+
+              <div class="container-fluid mt-3">
+                <button
+                  class="btn"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#demo"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="offcanvas offcanvas-end" id="demos">
+                <div class="offcanvas-body">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                  ></button>
+                </div>
+              </div>
+
+              <div class="container-fluid mt-3">
+                <button
+                  class="btn"
+                  id="cartitem"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#demos"
+                >
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+</div>
+
+    <div class="buy_product">
+      
+      <div class="product">
+            <div class="img_product">
+                <img src="{%static '' %}{{dataarr.0.imgs}}">
+            </div>
+            <div class="produt_details">
+                <div class="pro">
+                    <p class="shoe_name">{{dataarr.0.shoesname}}</p>
+                    <div class="paise">
+                        <p class="money">{{dataarr.0.price}}</p>
+                        <p>inclusive of all taxes</p>
+                    </div>
+                    <div class="buttons">
+                        <label class="se">Choose Size: </label>
+                        
+                        <div class="size_butt">
+                            <button class="size">5</button>
+                            <button class="size">6</button>
+                            <button class="size">7</button>
+                            <button class="size">8</button>
+                            <button class="size">9</button>
+                            <button class="size">10</button>
+                        </div>
+                    </div>
+                    <div class="quantity">
+                        <label class="se">Add Quantity:</label>
+                        
+                           
+                        <div class="add_q">
+                            <button class="dec">-</button>
+                            <p class="put">0</p>
+                           <button class="inc">+</button> 
+                        </div>
+                    </div>
+                    <button class="cart">Add To Cart</button>
+                    <button class="but_now">Buy It Now</button>
+                    
+                </div>
+            </div>
+        </div>
+      </div>
+      
+    <div class="returns">
+        <div class="seven">
+            <img src="/src/o.webp">
+            <span>7 Days Return</span>
+        </div>
+        <div class="need">
+            <p>Need not worry if you have an issue with the size, color or a manufacturing defect, we offer a 7 day free product replacement.</p>
+            <a href="/htmlfile/refund.html">
+                <p>View Return / Replacement Policy</p>
+            </a>
+            <p>Maximize your athletic performance with ASIAN Men's FORTUNER-PRO-01 Running Sports Shoe. Designed for sports, running, gym, and workout activities, these shoes provide the support and comfort you need to excel. With their high-quality materials and construction, you can trust in their performance and durability.</p>
+            <p>Manufacturer/Packer:<b>  Asian Footwears Pvt. Ltd. Udyog Nagar, Delhi 110041</b></p>
+
+        </div>
+    </div>
+
+    <div class="img_se">
+        <img src="/src/one.webp">
+        <img src="/src/tow.webp">
+        <img src="/src/thre.webp">
+        <img src="/src/for.webp">
+        <img src="/src/five.webp">
+    </div>
+
+    
+
+</body>
+</html>
+
+<script>
+
+
+
+let dec = document.querySelector('.dec')
+let put = document.querySelector('.put') 
+let inc = document.querySelector('.inc')
+let count = 0
+
+dec.addEventListener('click',()=>{
+    if (count > 0) {
+        count -= 1;
+        put.innerHTML = count;
+    }
+})
+
+inc.addEventListener('click',()=>{
+    count += 1
+    put.innerHTML = count
+})
+
+   
+
+
+</script>
