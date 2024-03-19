@@ -810,3 +810,11 @@ let collection = [
 //     console.error("Element with ID lifesty_shoes not found.");
 //   }
 // }
+
+//search
+
+let search = document.querySelector(".search");
+
+search.addEventListener("keyup",()=>{
+  console.log("hello")
+});

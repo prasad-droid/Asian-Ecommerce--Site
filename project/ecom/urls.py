@@ -20,4 +20,5 @@ urlpatterns = [
     path('product/<int:id>', views.product),
     path('login', views.login),
     path('signup', views.signup),
+    path('logout',views.logout)
 ]

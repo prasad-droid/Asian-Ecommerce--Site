@@ -6,8 +6,11 @@ from . import models
 
 
 def homepage(req):
-
-    return render(req, 'index.html')
+    user = req.session.get('userDetails')
+    if not user:
+        return redirect('/login')
+    else:
+        return render(req, 'index.html')
 
 
 def menchoice(req):
@@ -108,6 +111,7 @@ def login(req):
         user = models.Users.objects.all().filter(email=email, password=pwd)
         print(len(user))
         if len(user) == 1:
+            req.session['userDetails'] = user.all().values()[0]['id']
             return redirect('/', context={'user': user})
     return render(req, 'login.html')
 
@@ -123,3 +127,9 @@ def signup(req):
 
     return render(req, 'signup.html')
 
+
+def logout(req):
+     # Clear the user's session
+    req.session.clear()
+    # Redirect to the home page or any other desired URL
+    return redirect('/')
