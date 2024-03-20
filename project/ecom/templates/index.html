@@ -75,6 +75,7 @@
                       <li><a class="dropdown-item" href="signup">Create Account</a></li>
                       {% endif %}
                       {% if user %}
+                      <li><a class="dropdown-item" href="logout">{{userdetail.username}}</a>
                       <li><a class="dropdown-item" href="logout">Logout</a></li>
                       {% endif %}
                       

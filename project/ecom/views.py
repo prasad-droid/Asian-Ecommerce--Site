@@ -10,7 +10,9 @@ def homepage(req):
     if not user:
         return redirect('/login')
     else:
-        return render(req, 'index.html')
+        userDetail = models.Users.objects.all().values().get(id=user)
+        print(userDetail)
+        return render(req, 'index.html', context={"userdetail": userDetail})
 
 
 def menchoice(req):
@@ -129,7 +131,11 @@ def signup(req):
 
 
 def logout(req):
-     # Clear the user's session
+    # Clear the user's session
     req.session.clear()
     # Redirect to the home page or any other desired URL
     return redirect('/')
+
+
+def order(req):
+    return render(req, "order.html")

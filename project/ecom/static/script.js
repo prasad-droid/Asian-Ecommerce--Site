@@ -785,36 +785,3 @@ let collection = [
 //     console.error("Element with ID lifesty_shoes not found.");
 //   }
 // }
-
-// function new_shoes() {
-//   let arrival = document.querySelector("#new");
-//   arr = collection.filter((ele) => {
-//     return ele.type == "new";
-//   });
-//   if (arrival) {
-//     for (let i = 0; i < arr.length; i++) {
-//       let cards = document.createElement("div");
-//       cards.classList.add("box_sp");
-//       cards.innerHTML = `
-//       <a href="/product/${arr[i].id}">
-//                     <div class="spo_s">
-//                         <img src="static/${arr[i].imgs}" alt="shoe image">
-//                         <p>${arr[i].shoesname}</p>
-//                         <p>${arr[i].price}</p>
-//                     </div>
-//                 </a>
-//                 `;
-//       arrival.appendChild(cards);
-//     }
-//   } else {
-//     console.error("Element with ID lifesty_shoes not found.");
-//   }
-// }
-
-//search
-
-let search = document.querySelector(".search");
-
-search.addEventListener("keyup",()=>{
-  console.log("hello")
-});
