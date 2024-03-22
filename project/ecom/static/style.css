@@ -464,6 +464,10 @@ a {
   margin: 12px;
 }
 
+.det {
+  margin: 400px;
+}
+
 .cards {
   margin-top: 50px;
   display: flex;
