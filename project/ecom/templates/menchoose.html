@@ -12,113 +12,152 @@
     <script src={% static 'script.js' %}></script>
 </head>
 <body>
+  <body>
     <div class="container_nav fixed-top">
-        <div class="navbar_con">
-          <ul>
-            <li>
-              <a href="/">
-                <img src="{% static 'src/logo.webp' %}" width="100px" />
-              </a>
-            </li>
-            <li>
-              <ul class="menu_side">
-                <li>
-                  <a href="/">
-                    <p>Home</p>
-                  </a>
-                </li>
-  
-                <li>
-                  <a href="menchoose">
-                    <p>Men</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="women">
-                    <p>Women</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="kid">
-                    <p>Kids</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="arrivals">
-                    <p>New Arrivals</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="order">
-                    <p>My Orders</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-  
-            <li>
-              <ul class="other">
-                <li>
-                  <a href="">
-                    <span id="name_login">Vivek</span>
-                    <i class="fa-solid fa-circle-user"></i>
-                  </a>
-                </li>
-  
-                <li>
-                  <div class="offcanvas offcanvas-top" id="demo">
-                    <div class="offcanvas-body">
-                      <input type="text" placeholder="Search" class="search" />
-                      <button class="sea">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        id="searchclose"
-                        data-bs-dismiss="offcanvas"
-                      ></button>
+      <div class="navbar_con">
+        <ul>
+          <li>
+            <a href="/">
+              <img src="{% static 'src/logo.webp' %}" width="100px" />
+            </a>
+          </li>
+          <li>
+            <ul class="menu_side">
+              <li>
+                <a href="/">
+                  <p>Home</p>
+                </a>
+              </li>
+
+              <li>
+                <a href="menchoose">
+                  <p>Men</p>
+                </a>
+              </li>
+              <li>
+                <a href="women">
+                  <p>Women</p>
+                </a>
+              </li>
+              <li>
+                <a href="kid">
+                  <p>Kids</p>
+                </a>
+              </li>
+              <li>
+                <a href="arrivals">
+                  <p>New Arrivals</p>
+                </a>
+              </li>
+              <li>
+                <a href="order">
+                  <p>My Orders</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <ul class="other">
+              <li>
+                  <div class="dropdown">
+                    <button type="button"  class="dropdown-toggle" data-bs-toggle="dropdown">
+                      <i class="fa-solid fa-circle-user"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                      {% if not user %}
+                      <li><a class="dropdown-item" href="login">Log In</a></li>
+                      <li><a class="dropdown-item" href="signup">Create Account</a></li>
+                      {% endif %}
+                      {% if user %}
+                      <li><a class="dropdown-item" href="logout">{{userdetail.username}}</a>
+                      <li><a class="dropdown-item" href="logout">Logout</a></li>
+                      {% endif %}
+                      
+                    </ul>
+                  </div>
+              
+              </li>
+
+              <li>
+                <div class="offcanvas offcanvas-top" id="demo">
+                  
+                  <div class="offcanvas-body">
+                    <input type="text" placeholder="Search" class="search" />
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                  </div>
+                </div>
+
+                <div class="container-fluid mt-3">
+                  <button
+                    class="btn"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demo"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                </div>
+              </li>
+
+              <li>
+                <div class="offcanvas offcanvas-end" id="demos">
+                  <div class="offcanvas-body">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="offcanvas"
+                    ></button>
+                  </div>
+                </div>
+
+                <div class="container-fluid mt-3">
+                  <button
+                    class="btn"
+                    id="cartitem"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#demos"
+                  >
+                    <i class="fa-solid fa-bag-shopping"></i>
+                  </button>
+                </div>
+              </li>
+
+              <li >
+                <div class="offcanvas offcanvas-start" id="demoss">
+                  <div class="offcanvas-header">
+                    <h1 class="offcanvas-title">Menu</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div class="m">
+                      <a href="menchoose"><p style="font-size: larger;">Men</p></a>
+                      <a href="women"><p style="font-size: larger;">Women</p></a>
+                      <a href="kid"><p style="font-size: larger;">Kids</p></a>
+                      <a href="arrivals"><p style="font-size: larger;">New Arrivals</p></a>
+                      <a href=""><p style="font-size: larger;">My Order</p></a>
+                      
+                    </div>
+
+                    <div class="log">
+                        <Button>
+
+                        </Button>
                     </div>
                   </div>
-  
-                  <div class="container-fluid mt-3">
-                    <button
-                      class="btn"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#demo"
-                    >
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                  </div>
-                </li>
-                <li>
-                  <div class="offcanvas offcanvas-end" id="demos">
-                    <div class="offcanvas-body">
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="offcanvas"
-                      ></button>
-                    </div>
-                  </div>
-  
-                  <div class="container-fluid mt-3">
-                    <button
-                      class="btn"
-                      id="cartitem"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#demos"
-                    >
-                      <i class="fa-solid fa-bag-shopping"></i>
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+                </div>
+
+                <div class="container-fluid mt-3">
+                  <button class="btn" id="navitem" type="button" data-bs-toggle="offcanvas" data-bs-target="#demoss"> 
+                  <i class="fa-solid fa-bars"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
 
     

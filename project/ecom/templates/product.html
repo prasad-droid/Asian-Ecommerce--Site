@@ -40,7 +40,7 @@
     background-color: burlywood;
   }
 </style>
-
+<body>
 <div class="container_nav fixed-top">
     <div class="navbar_con">
       <ul>
@@ -358,6 +358,7 @@ function buyorder(){
   o1 = {'id':id,"size":size,'qty':qty,'city':city,'state':state,'pin':pin,'address':address}
   orders.push(o1)
   alert("Thnks for buying")
+  
   localStorage['buy'] = JSON.stringify(orders);
 }
 
